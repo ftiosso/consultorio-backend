@@ -115,6 +115,7 @@
     <Compile Include="Configurations\Database.cs" />
     <Compile Include="Configurations\Logger.cs" />
     <Compile Include="Controllers\AutenticacoesController.cs" />
+    <Compile Include="Controllers\EspecialidadesController.cs" />
     <Compile Include="Controllers\MedicamentosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\MedicosController.cs" />
@@ -122,9 +123,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Especialidade.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Repositories\SQLServer\Autenticacao.cs" />
+    <Compile Include="Repositories\SQLServer\Especialidade.cs" />
     <Compile Include="Repositories\SQLServer\Usuario.cs" />
     <Compile Include="Utils\Cache.cs" />
     <Compile Include="Utils\Cryptography.cs" />
