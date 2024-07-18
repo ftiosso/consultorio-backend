@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace web_api.Models
 {
@@ -14,14 +15,14 @@ namespace web_api.Models
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Nome deve conter de 3 a 100 caracteres.")]
         [RegularExpression("^[A-ZÀ-Úa-zà-ú ]+$", ErrorMessage = "Nome deve conter apenas letras.")]
         public string Nome { get; set;}
-
-        //public List<string> Especialidades { get; set; }
+                
+        public List<Models.Especialidade> Especialidades { get; set; }
 
         public Medico()
         {
             this.CRM = string.Empty;
             this.Nome = "";
-            //this.Especialidades = new List<string>();
+            this.Especialidades = new List<Models.Especialidade>();
         }
     }
 }

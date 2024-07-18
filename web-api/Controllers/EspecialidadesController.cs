@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -123,6 +124,15 @@ namespace web_api.Controllers
                     return NotFound();
 
                 return Ok();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                    return BadRequest("A especialidade está relacionada com algum médico e não pode ser excluída.");
+
+                Utils.Logger.WriteException(Configurations.Logger.GetFullPath(), ex);
+
+                return InternalServerError();
             }
             catch (Exception ex)
             {
